@@ -61,17 +61,21 @@ function App() {
 
   return (
     <div className="Dashboard__Wrapper">
-      <Navbar
-        displayButton={displayButton}
-        setDisplayButton={setDisplayButton}
-        GroupBy={GroupBy}
-        OrderBy={OrderBy}
-        handleGroupBy={handleGroupBy}
-        handleOrderBy={handleOrderBy}
-      />
-      
-      <Dashboard data={data} GroupBy={GroupBy} OrderBy={OrderBy}/>
-      
+      <div className="Navbar__Backdrop">
+
+      </div>
+      <div className="Dashboard__Content">
+        <Navbar
+          displayButton={displayButton}
+          setDisplayButton={setDisplayButton}
+          GroupBy={GroupBy}
+          OrderBy={OrderBy}
+          handleGroupBy={handleGroupBy}
+          handleOrderBy={handleOrderBy}
+        />
+
+        <Dashboard data={data} GroupBy={GroupBy} OrderBy={OrderBy} />
+      </div>
     </div>
   );
 }

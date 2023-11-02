@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { LuSettings2, LuChevronDown } from "react-icons/lu";
 import "./Navbar.css";
 const Navbar = ({
@@ -10,6 +10,21 @@ const Navbar = ({
   handleOrderBy,
 }) => {
   console.log(displayButton);
+  const divRef = useRef();
+
+  const handleClickOutside = (e) => {
+    if (divRef.current && !divRef.current.contains(e.target)) {
+      // Do something when clicked outside the div
+      setDisplayButton(!displayButton);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const refOne = useRef(null);
 
   return (
     <div className="Navbar__Body">
@@ -23,7 +38,11 @@ const Navbar = ({
           <LuChevronDown />
         </button>
         {displayButton && (
-          <div className={`Display__Content`} style={{ zIndex: "1" }}>
+          <div
+            ref={divRef}
+            className={`Display__Content`}
+            style={{ zIndex: "1" }}
+          >
             <div className="Display__Items">
               <h5>Group By</h5>
               <select

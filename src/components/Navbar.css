@@ -2,13 +2,24 @@
   /* background: #bb4949; */
   width: 100%;
   font-size: 18px;
+  padding-left: 24px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  /* background-color: var(--white);
+  border-bottom: solid 1px var(--dark2);
+  box-shadow: 0px 2px 4px color-mix(in oklch, var(--dark2), transparent 50%); */
 }
 
 .Display__Button {
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  border: solid 2px rgb(203, 203, 203);
+
+  background: var(--white);
+  border: solid 1px var(--dark2);
+  box-shadow: 0px 1px 4px color-mix(in oklch, var(--dark2), transparent 50%);
+
   border-radius: 6px;
   gap: 12px;
   font-size: 18px;
@@ -28,10 +39,12 @@ h5 {
   position: absolute;
   transform: translate(0, 12px);
   /* display: none; */
-  background: rgb(235, 235, 235);
+  border: solid 1px var(--dark2);
+  background: var(--white);
+  box-shadow: 0px 2px 4px color-mix(in oklch, var(--dark2), transparent 20%);
   padding: 6px 12px;
-  border: solid 2px #ccc;
-  box-shadow: 0px 0px 10px #ccc;
+  /* border: solid 2px #ccc;
+  box-shadow: 0px 0px 10px #ccc; */
   border-radius: 8px;
 }
 
@@ -47,6 +60,7 @@ h5 {
 .Display__Items > h5 {
   font-size: 16px;
   font-weight: 500;
+  color: var(--dark3);
   width: 100px;
 }
 
@@ -57,7 +71,7 @@ h5 {
   justify-content: space-between;
   align-items: center;
   padding: 6px 12px;
-  border: solid 2px rgb(203, 203, 203);
+  border: solid 1px var(--dark2);
   border-radius: 6px;
   font-size: 16px;
   position: relative;

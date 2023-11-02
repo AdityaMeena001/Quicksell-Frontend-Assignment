@@ -93,7 +93,7 @@ const Card = ({
   GroupBy,
 }) => {
   return (
-    <div className={`Card__Main Priority__Color__${priority}`}>
+    <div className={`Card__Main `}>
       <div className="Card__Heading">
         <p className="Profile__Name">{id}</p>
         <div className="Profile__Photo">

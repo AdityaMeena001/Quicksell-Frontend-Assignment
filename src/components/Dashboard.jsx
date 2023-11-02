@@ -29,29 +29,31 @@ let images = {
 };
 
 let Status_Icons = {
-  Backlog: <LuCircleDashed style={{ color: "#aaa", fontSize: "18px" }} />,
-  Todo: <LuCircle style={{ color: "#aaa", fontSize: "18px" }} />,
+  "Backlog": <LuCircleDashed style={{ color: "#aaa", fontSize: "18px" }} />,
+  "Todo": <LuCircle style={{ color: "#aaa", fontSize: "18px" }} />,
   "In progress": <RiContrastLine style={{ color: "#fc2", fontSize: "18px" }} />,
-  Done: <BiSolidCheckCircle style={{ color: "#75f", fontSize: "18px" }} />,
-  Canceled: <MdOutlineCancel style={{ color: "gray", fontSize: "16px" }} />
+  "Done": <BiSolidCheckCircle style={{ color: "#75f", fontSize: "18px" }} />,
+  "Canceled": <MdOutlineCancel style={{ color: "gray", fontSize: "16px" }} />,
 };
 
 let Priority_Icons = {
-  0: <BsThreeDots style={{ color: "gray", fontSize: "18px" }} />,
+  0: <BsThreeDots style={{ color: "var(--dark3)", fontSize: "18px" }} />,
   1: (
     <>
       <MdSignalCellularAlt
         style={{
-          color: "lightgray",
+          color: "var(--dark2)",
           fontSize: "18px",
-          position: "absolute",
-          zIndex:'-1'
+          // position: "absolute",
+          zIndex: "-1",
         }}
       />
       <MdSignalCellularAlt1Bar
         style={{
-          color: "gray",
+          color: "var(--dark3)",
           fontSize: "18px",
+          position:'absolute',
+          transform:'translate(-18px,0)',
           zIndex: "1",
         }}
       />
@@ -61,22 +63,24 @@ let Priority_Icons = {
     <>
       <MdSignalCellularAlt
         style={{
-          color: "lightgray",
+          color: "var(--dark2)",
           fontSize: "18px",
-          position: "absolute",
-          zIndex:'-1'
+          // position: "absolute",
+          zIndex: "-1",
         }}
       />
       <MdSignalCellularAlt2Bar
         style={{
-          color: "gray",
+          color: "var(--dark3)",
           fontSize: "18px",
+          position:'absolute',
+          transform:'translate(-18px,0)',
           zIndex: "1",
         }}
       />
     </>
   ),
-  3: <MdSignalCellularAlt style={{ color: "gray", fontSize: "18px" }} />,
+  3: <MdSignalCellularAlt style={{ color: "var(--dark3)", fontSize: "18px" }} />,
   4: (
     <BsFillExclamationSquareFill
       style={{ color: "orange", fontSize: "18px" }}
@@ -95,8 +99,6 @@ let keys = {
   status: "status",
   user: "userId",
 };
-
-let Group_Title = {};
 
 function CustomeOrderByProperty(property) {
   return function (a, b) {
@@ -157,9 +159,13 @@ const Dashboard = ({ data, GroupBy, OrderBy }) => {
                       <img src={images[Curr__Group]} alt="" />
                     </div>
                   ) : GroupBy === "priority" ? (
-                    <div style={{marginTop:'7px'}}>{Priority_Icons[Curr__Group]}</div>
+                    <div style={{ marginTop: "7px" }}>
+                      {Priority_Icons[Curr__Group]}
+                    </div>
                   ) : (
-                    <div style={{marginTop:'7px'}}>{Status_Icons[Curr__Group]}</div>
+                    <div style={{ marginTop: "7px" }}>
+                      {Status_Icons[Curr__Group]}
+                    </div>
                   )}
                 </div>
                 <div>
@@ -177,10 +183,16 @@ const Dashboard = ({ data, GroupBy, OrderBy }) => {
                   }
                 </div>
               </div>
-              <div className="Header__Right">
-                <MdAdd />
-                <BiDotsHorizontalRounded />
-              </div>
+              {data.tickets.filter(
+                (ticket) => ticket[keys[GroupBy]] === Curr__Group
+              ).length === 0 ? (
+                <></>
+              ) : (
+                <div className="Header__Right">
+                  <MdAdd />
+                  <BiDotsHorizontalRounded />
+                </div>
+              )}
             </div>
             <div className="Column__Cards">
               {data.tickets.map(

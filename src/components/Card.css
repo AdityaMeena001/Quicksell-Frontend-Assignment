@@ -1,16 +1,27 @@
+/* * {
+  --white: #f4f4f2;
+  --dark1: #e8e8e8;
+  --dark2: #bbbfca;
+  --dark3: #495464;
+  --black: #000000;
+} */
+
 .Card__Main {
-  flex: 1;
-  padding: 1rem;
+  min-width: 250px;
+  height: 130px;
+  padding: 0.75rem;
   /* margin-top: 2rem; */
   display: flex;
   flex-direction: column;
-  background-color: #f9f9f9;
-  align-items: flex-start;
-  min-width: 250px;
-  border-radius: 8px;
-  border: solid #ddd 1px;
-}
 
+  justify-content: space-between;
+
+  background-color: var(--white);
+
+  border-radius: 8px;
+  border: solid var(--dark2) 1px;
+  box-shadow: 0px 2px 4px color-mix(in oklch, var(--dark2), transparent 50%);
+}
 
 /* ####################  CARD HEADING  #################### */
 
@@ -33,14 +44,14 @@
 }
 .Profile__Photo {
   width: fit-content;
-  height: 30px;
+  height: 26px;
   display: flex;
   overflow: hidden;
   position: relative;
 }
 .Profile__Photo > img {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 100%;
   object-fit: cover;
 }
@@ -48,13 +59,13 @@
   width: 12px;
   height: 12px;
   background: rgb(69, 190, 53);
-  border: solid white 2px;
+  border: solid var(--white) 2px;
   position: absolute;
-  transform: translate(19px,19px);
+  transform: translate(15px, 15px);
   border-radius: 100%;
 }
 
-.Profile__Photo > .Is_Available__false{
+.Profile__Photo > .Is_Available__false {
   background-color: #bbb;
 }
 
@@ -62,20 +73,23 @@
 
 .Card__Content {
   display: flex;
-  padding: 6px 1px;
+  padding: 0px 1px;
+  padding-bottom: 2px;
   gap: 6px;
   /* align-items: flex-start; */
 }
-h1{margin: 0;}
+h1 {
+  margin: 0;
+}
 .Card__Content > .Card__Status__Icon {
-  padding-top: 3px;
+  padding-top: 1px;
 }
 .Card__Content > .Ticket__Title {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   text-align: left;
 
-  --max-lines : 2;
+  --max-lines: 2;
 
   overflow: hidden;
 
@@ -99,23 +113,23 @@ h1{margin: 0;}
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
-  border: solid #ddd 1px;
+  background: var(--white);
+  border: solid var(--dark2) 1px;
   margin: 0;
   border-radius: 6px;
 }
 
 .Card__Footer > .Message__Tag {
   height: 30px;
-  padding: 0 12px;
+  padding: 0 9px;
   display: flex;
   color: gray;
   font-weight: 400;
   font-size: 16px;
   justify-content: center;
   align-items: center;
-  background: #fff;
-  border: solid #ddd 1px;
+  background: var(--white);
+  border: solid var(--dark2) 1px;
   margin: 0;
   border-radius: 6px;
 }
