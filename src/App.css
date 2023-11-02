@@ -10,7 +10,7 @@ html,
 body {
   background-color: var(--dark1);
   z-index: -10;
-  padding-bottom: 150px;
+  padding-bottom: 25px;
 }
 
 .Dashboard__Wrapper{

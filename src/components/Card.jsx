@@ -119,7 +119,7 @@ const Card = ({
         )}
 
         <h4 className="Message__Tag">
-          <BsCircleFill style={{fontSize:'12px', marginTop:'2px', marginRight:'6px'}}/>
+          <BsCircleFill style={{color:'var(--dark2)',fontSize:'12px', marginTop:'2px', marginRight:'6px'}}/>
           {tag}
           </h4>
       </div>

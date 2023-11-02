@@ -15,7 +15,7 @@ const Navbar = ({
   const handleClickOutside = (e) => {
     if (divRef.current && !divRef.current.contains(e.target)) {
       // Do something when clicked outside the div
-      setDisplayButton(!displayButton);
+      setDisplayButton(false);
     }
   };
 
