@@ -1,0 +1,64 @@
+.Navbar__Body {
+  /* background: #bb4949; */
+  width: 100%;
+  font-size: 18px;
+}
+
+.Display__Button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: solid 2px rgb(203, 203, 203);
+  border-radius: 6px;
+  gap: 12px;
+  font-size: 18px;
+  position: relative;
+}
+
+.Display__Button > h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h5 {
+  margin: 0;
+}
+
+.Display__Content {
+  position: absolute;
+  transform: translate(0, 12px);
+  /* display: none; */
+  background: rgb(235, 235, 235);
+  padding: 6px 12px;
+  border: solid 2px #ccc;
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: 8px;
+}
+
+.Display__Items {
+  display: flex;
+  align-items: center;
+  /* gap: 16px; */
+  padding: 4px 0;
+  /* border-radius: 6px; */
+  /* width: 250px; */
+}
+
+.Display__Items > h5 {
+  font-size: 16px;
+  font-weight: 500;
+  width: 100px;
+}
+
+.SelectGroupBy,
+.SelectOrderBy {
+  display: flex;
+  width: 120px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border: solid 2px rgb(203, 203, 203);
+  border-radius: 6px;
+  font-size: 16px;
+  position: relative;
+}
