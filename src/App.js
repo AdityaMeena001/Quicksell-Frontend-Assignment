@@ -1,5 +1,4 @@
 import "./App.css";
-import Card from "./components/Card";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import axios from "axios";
@@ -21,24 +20,20 @@ const getOrder = () => {
   }
 };
 
-const priorityLevels = [0, 1, 2, 3, 4];
-let icons = ["🔵", "🟢", "🟡", "🟠", "🔴"];
-let priority_tag = ["No priority", "Low", "Medium", "High", "Urgent"];
-
 function App() {
   const [displayButton, setDisplayButton] = useState(false);
   const [GroupBy, setGroupBy] = useState(getGroup);
   const [OrderBy, setOrderBy] = useState(getOrder);
 
   const handleGroupBy = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setGroupBy(e.target.value);
     setDisplayButton(!displayButton);
     localStorage.setItem("group", e.target.value);
   };
 
   const handleOrderBy = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setOrderBy(e.target.value);
     setDisplayButton(!displayButton);
     localStorage.setItem("order", e.target.value);
@@ -57,7 +52,7 @@ function App() {
     return setData(res.data);
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="Dashboard__Wrapper">

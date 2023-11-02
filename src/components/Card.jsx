@@ -6,7 +6,6 @@ import {
   MdSignalCellularAlt1Bar,
   MdSignalCellularAlt2Bar,
 } from "react-icons/md";
-import { TbAlertTriangleFilled } from "react-icons/tb";
 import { BsThreeDots, BsFillExclamationSquareFill, BsCircleFill } from "react-icons/bs";
 import { BiSolidCheckCircle } from "react-icons/bi";
 import { RiContrastLine } from "react-icons/ri";
@@ -78,8 +77,6 @@ let Priority_Icons = {
     />
   ),
 };
-
-let priority_tag = ["No priority", "Low", "Medium", "High", "Urgent"];
 
 const Card = ({
   id,

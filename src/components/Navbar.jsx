@@ -9,7 +9,7 @@ const Navbar = ({
   handleGroupBy,
   handleOrderBy,
 }) => {
-  console.log(displayButton);
+  // console.log(displayButton);
   const divRef = useRef();
 
   const handleClickOutside = (e) => {
@@ -22,9 +22,9 @@ const Navbar = ({
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  });
 
-  const refOne = useRef(null);
+  // const refOne = useRef(null);
 
   return (
     <div className="Navbar__Body">

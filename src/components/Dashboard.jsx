@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import "./Dashboard.css";
-import { Md3DRotation, MdAdd, MdOutlineCancel } from "react-icons/md";
+import { MdAdd, MdOutlineCancel } from "react-icons/md";
 import { BiSolidCheckCircle, BiDotsHorizontalRounded } from "react-icons/bi";
 
 import "./Card.css";
@@ -10,7 +10,6 @@ import {
   MdSignalCellularAlt1Bar,
   MdSignalCellularAlt2Bar,
 } from "react-icons/md";
-import { TbAlertTriangleFilled } from "react-icons/tb";
 import { BsThreeDots, BsFillExclamationSquareFill } from "react-icons/bs";
 import { RiContrastLine } from "react-icons/ri";
 import { LuCircle, LuCircleDashed } from "react-icons/lu";
@@ -29,11 +28,11 @@ let images = {
 };
 
 let Status_Icons = {
-  "Backlog": <LuCircleDashed style={{ color: "#aaa", fontSize: "18px" }} />,
-  "Todo": <LuCircle style={{ color: "#aaa", fontSize: "18px" }} />,
+  Backlog: <LuCircleDashed style={{ color: "#aaa", fontSize: "18px" }} />,
+  Todo: <LuCircle style={{ color: "#aaa", fontSize: "18px" }} />,
   "In progress": <RiContrastLine style={{ color: "#fc2", fontSize: "18px" }} />,
-  "Done": <BiSolidCheckCircle style={{ color: "#75f", fontSize: "18px" }} />,
-  "Canceled": <MdOutlineCancel style={{ color: "gray", fontSize: "16px" }} />,
+  Done: <BiSolidCheckCircle style={{ color: "#75f", fontSize: "18px" }} />,
+  Canceled: <MdOutlineCancel style={{ color: "gray", fontSize: "16px" }} />,
 };
 
 let Priority_Icons = {
@@ -52,8 +51,8 @@ let Priority_Icons = {
         style={{
           color: "var(--dark3)",
           fontSize: "18px",
-          position:'absolute',
-          transform:'translate(-18px,0)',
+          position: "absolute",
+          transform: "translate(-18px,0)",
           zIndex: "1",
         }}
       />
@@ -73,14 +72,16 @@ let Priority_Icons = {
         style={{
           color: "var(--dark3)",
           fontSize: "18px",
-          position:'absolute',
-          transform:'translate(-18px,0)',
+          position: "absolute",
+          transform: "translate(-18px,0)",
           zIndex: "1",
         }}
       />
     </>
   ),
-  3: <MdSignalCellularAlt style={{ color: "var(--dark3)", fontSize: "18px" }} />,
+  3: (
+    <MdSignalCellularAlt style={{ color: "var(--dark3)", fontSize: "18px" }} />
+  ),
   4: (
     <BsFillExclamationSquareFill
       style={{ color: "orange", fontSize: "18px" }}
@@ -137,9 +138,9 @@ const Dashboard = ({ data, GroupBy, OrderBy }) => {
     data.tickets.sort(CustomeOrderByProperty(OrderBy));
   }
 
-  console.log(OrderBy);
+  // console.log(OrderBy);
 
-  console.log("Dashboard Rendered");
+  // console.log("Dashboard Rendered");
 
   return (
     <div className="Main__Body__Content">
